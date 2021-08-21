@@ -16,6 +16,8 @@ public class LoginForm extends JFrame {
 
 	private int x_pressed, y_pressed;
 
+
+
 	public LoginForm() {
 		setTitle("Login Form");
 		setSize(600, 400);
