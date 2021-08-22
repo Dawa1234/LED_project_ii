@@ -125,11 +125,10 @@ public class RegisterForm extends JFrame {
             @Override
             public void mouseClicked(MouseEvent e) {
                 String string_mobile = txtMobile.getText();
-
                 if (!txtName.getText().equals("")) {
                     if (txtMobile.getText().trim().length() == 10 && !txtMobile.getText().equals("")) {
                         try{
-                            int int_string_mobile = Integer.parseInt(string_mobile);
+                            long int_string_mobile = Long.parseLong(string_mobile);
                         }catch (NumberFormatException er){
                             JOptionPane.showMessageDialog(bg,"Please enter digit");
                             return;
