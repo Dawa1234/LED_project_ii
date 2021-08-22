@@ -2,9 +2,6 @@ package screens;
 
 import javax.swing.*;
 import java.awt.*;
-
-
-
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
 public class Driver_dashboard{
@@ -14,18 +11,21 @@ public class Driver_dashboard{
     JButton driver_time_table, driver_routes,driver_bus_details;
     JPanel driver_profile, driver_dashboard;
     Font font_db;
+    RegisterForm registerForm;
 
     public Driver_dashboard(){
+        registerForm = new RegisterForm();
         // Creating object for main window.
         driver_frame = new JFrame();
 
         // Message for profile picture.
         profile = new JLabel("Profile picture");
-        profile.setSize(150,50);
+        profile.setBounds(10,10,150,50);
 
         // Message for profile name.
         profile_name = new JLabel();
-        profile_name.setText("Sample Sample Sample");
+        profile_name.setLayout(null);
+        profile_name.setText(registerForm.txtName.getText());
         profile_name.setForeground(Color.BLUE);
         profile_name.setBounds(63,220,150,30);
         driver_frame.add(profile_name);
@@ -35,10 +35,11 @@ public class Driver_dashboard{
         // Message for dashboard.
         dashboard = new JLabel("Sample");
         dashboard.setFont(font_db);
-        dashboard.setBounds(500,345,150,150);
+        dashboard.setBounds(425,300,150,150);
 
         // Profile picture panel.
         driver_profile = new JPanel();
+        driver_profile.setLayout(null);
         driver_profile.setBounds(70,75,130,130);
         driver_profile.setBackground(Color.gray);
         driver_profile.add(profile);
@@ -61,6 +62,7 @@ public class Driver_dashboard{
 
         // Main Dashboard.
         driver_dashboard = new JPanel();
+        driver_dashboard.setLayout(null);
         driver_dashboard.setBackground(Color.white);
         driver_dashboard.setBounds(250,30,1000,690);
         driver_dashboard.add(dashboard);
